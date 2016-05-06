@@ -5,3 +5,26 @@
   width: 80%;
   margin: 0 auto;
 }
+.table-ul {
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+  /*background-color: black;*/
+  /*color: white;*/
+  margin: 0;
+  padding: 0;
+}
+.table-ul li {
+  display: table-cell;
+  vertical-align: middle;
+  list-style-type: none;
+  /*height: 40px;*/
+}
+.detail {
+  /*background-color: black;*/
+  /*height: 40%;*/
+  /*opacity: 0.6;*/
+  /*color: white;*/
+  font: 30px;
+}
