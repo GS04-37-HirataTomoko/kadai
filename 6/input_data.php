@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <h1><旅行先アンケート></h1>
+  <h1>&lt;旅行先アンケート&gt;</h1>
     <form method="post" action="output_data.php">
         <div class="container">
             <div class="flex1">
