@@ -51,10 +51,8 @@
             }"></div>
         </div>
         <div id="slide">
-            <div style="background-color:eee;padding:1em;" ng-bind-html="edit_js"></div>
-            <style type="text/css" ng-bind-html="edit_css">
-
-            </style>
+            <div style="background-color:eee;padding:1em;" ng-bind-html="edit_js | unsafe"></div>
+            <style type="text/css" ng-bind-html="edit_css | unsafe"></style>
 
         </div>
     </div>
