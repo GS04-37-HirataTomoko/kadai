@@ -1,0 +1,22 @@
+body {
+    font-family: "メイリオ", "游明朝", "Yu Mincho", "游明朝体", serif;
+}
+#main {
+    display: -webkit-flex;
+    display: flex;
+}
+#edit, #slide{
+    -webkit-flex: 1;
+    flex: 1;
+}
+#editor1, #editor2 {
+    height: 450px;
+}
+#show {
+    height: 950px;
+}
+section {
+    height: 400px;
+    background-color: #e6e6fa;
+    padding: 2px;
+}

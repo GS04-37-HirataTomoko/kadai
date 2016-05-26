@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="MyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Slide Maker</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+    <p id="login_area" ng-cloak>
+        <div id='username' ng-controller="LoginDataCtrl as lgCtrl">
+            <div ng-bind="'Welcome ' + lgCtrl.username + ' ！'"></div>
+            <form  ng-if='lgCtrl.guest' name="form1" action="php/login_act.php" method="post">
+                ID:<input type="text" name="lid" />
+                PW:<input type="password" name="lpw" />
+                <input type="submit" value="LOGIN" />
+            </form>
+            <!-- TODO:ng-clickで動くようにする -->
+            <input ng-if='lgCtrl.lguser' type="button" value="LOGOUT" ng-click="click_logout()" onclick="location.href='php/logout.php'"/>
+        </div>
+    </p>
+    <div id="main">
+        <div id="edit">
+            <div id="editor1" ng-model="edit_js" ui-ace="{
+              useWrapMode : true,
+              mode:'html',
+              theme:'monokai',
+              require: ['ace/ext/language_tools','ace/ext/emmet'],
+              advanced: {
+                  enableEmmet: true,
+                  enableSnippets: true,
+                  enableBasicAutocompletion: true,
+                  enableLiveAutocompletion: true,
+                  fontSize: 16
+              }
+            }"></div>
+            <br>
+            <div id="editor2" ng-model="edit_css" ui-ace="{
+              useWrapMode : true,
+              mode:'css',
+              theme:'monokai',
+              require: ['ace/ext/language_tools','ace/ext/emmet'],
+              advanced: {
+                  enableEmmet: true,
+                  enableSnippets: true,
+                  enableBasicAutocompletion: true,
+                  enableLiveAutocompletion: true,
+                  fontSize: 16
+              }
+            }"></div>
+        </div>
+        <div id="slide">
+            <div style="background-color:eee;padding:1em;" ng-bind-html="edit_js"></div>
+            <style type="text/css" ng-bind-html="edit_css">
+
+            </style>
+
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"></script>
+    <script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-emmet.js"></script>
+    <script type="text/javascript" src="script/ui-ace.min.js"></script>
+    <script type="text/javascript" src="script/ng_main.js"></script>
+</body>
+
+</html>
